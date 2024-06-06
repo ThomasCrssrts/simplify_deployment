@@ -42,3 +42,7 @@ def main(
     # Write to file
     logger.info("Writing target to file.")
     (target.to_frame().to_parquet(path_to_save_target))
+
+
+if __name__ == "__main__":
+    typer.run(main)
