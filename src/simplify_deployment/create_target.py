@@ -19,7 +19,7 @@ logger.addHandler(handler)
 def main(
     path_to_minute_data: Path = typer.Option(default=...),
     path_to_save_target: Path = typer.Option(default=...),
-    number_of_weeks_to_use=16,
+    number_of_weeks_to_use: int = 16,
 ) -> None:
     number_of_minutes_per_week = 7 * 24 * 60
     number_of_minutes_to_use = (
