@@ -1,0 +1,38 @@
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.6.0
+      hooks:
+          - id: check-added-large-files
+          - id: check-toml
+          - id: check-yaml
+          - id: check-json
+    - repo: https://github.com/psf/black
+      rev: 24.4.2
+      hooks:
+          - id: black
+    - repo: https://github.com/PyCQA/flake8
+      rev: 7.0.0
+      hooks:
+          - id: flake8
+    - repo: https://github.com/pre-commit/mirrors-mypy
+      rev: v1.10.0
+      hooks:
+          - id: mypy
+            additional_dependencies:
+                [types-python-dateutil, types-PyYAML, types-pytz]
+    - repo: https://github.com/PyCQA/isort
+      rev: 5.13.2
+      hooks:
+          - id: isort
+    - repo: https://github.com/myint/autoflake
+      rev: v2.3.1
+      hooks:
+          - id: autoflake
+            args:
+                [
+                    --remove-all-unused-imports,
+                    --recursive,
+                    --remove-unused-variables,
+                    --in-place,
+                    --exclude=__init__.py,
+                ]
