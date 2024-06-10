@@ -29,6 +29,11 @@ def main(
             label="left",
         )
         .ffill()
+        .rename(
+            columns={
+                col_name: f"{col_name}_qh" for col_name in qh_data.columns
+            },
+        )
         .to_parquet(path_to_save_resampled_data)
     )
     logger.info("Resampling of qh data done.")
