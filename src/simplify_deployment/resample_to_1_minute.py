@@ -22,7 +22,7 @@ def main(
 ) -> None:
     logger.info("Starting resampling of qh data.")
     qh_data = pd.read_parquet(path_to_qh_data)
-    qh_data = (
+    (
         qh_data.resample(
             rule="1min",
             closed="left",
