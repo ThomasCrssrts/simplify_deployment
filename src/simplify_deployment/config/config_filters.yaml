@@ -1,0 +1,10 @@
+- kind: band_pass
+  period_hours: 24
+  columns: 
+    - siCumulative
+    - nrvCumulative
+    - nrvCumulative
+- kind: band_pass
+  period_hours: 12
+  columns: 
+    - siCumulative
