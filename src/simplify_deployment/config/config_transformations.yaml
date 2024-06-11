@@ -1,0 +1,12 @@
+- kind: first_derivative
+  columns: 
+    - siCumulative
+    - nrvCumulative
+    - nrvCumulative
+- kind: second_derivative
+  columns: 
+    - siCumulative
+- kind: cumsum_during_quarter
+  columns:
+    - siCumulative
+  
