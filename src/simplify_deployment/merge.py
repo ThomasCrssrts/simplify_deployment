@@ -1,4 +1,5 @@
 import logging
+from functools import reduce
 from pathlib import Path
 
 import pandas as pd
@@ -17,22 +18,22 @@ logger.addHandler(handler)
 
 
 def main(
-    path_to_first_df: Path = typer.Option(default=...),
-    path_to_second_df: Path = typer.Option(default=...),
-    path_to_save_merged_df: Path = typer.Option(default=...),
+    paths: list[Path] = typer.Option(..., help="Input df paths."),
+    path_output: Path = typer.Option(..., help="Path to output df"),
 ) -> None:
-    logger.info("Starting merging")
+    dfs = [pd.read_parquet(df_path) for df_path in paths]
     (
-        pd.merge(
-            pd.read_parquet(path_to_first_df),
-            pd.read_parquet(path_to_second_df),
-            left_index=True,
-            right_index=True,
-            how="inner",
-        ).to_parquet(path_to_save_merged_df)
+        reduce(
+            lambda a, b: pd.merge(
+                a,
+                b,
+                left_index=True,
+                right_index=True,
+                how="inner",
+            ),
+            dfs,
+        ).to_parquet(path_output)
     )
-    logger.info("Merging done.")
-    return
 
 
 if __name__ == "__main__":
