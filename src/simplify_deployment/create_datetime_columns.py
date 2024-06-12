@@ -1,6 +1,5 @@
 import logging
 from pathlib import Path
-from typing import Literal
 
 import numpy as np
 import pandas as pd
@@ -37,7 +36,7 @@ def periodic_spline_transformer(
 
 def create_datetime_columns(
     X: pd.Series,
-    kind: Literal["ordinal", "onehot", "spline"] = "ordinal",
+    kind: str = "ordinal",
     timezone: str = "Europe/Brussels",
 ) -> pd.DataFrame:
     local_time_index = X.index.tz_convert(tz.gettz(timezone))
@@ -90,7 +89,7 @@ def create_datetime_columns(
 
 def main(
     path_to_X: Path = typer.Option(default=...),
-    kind: Literal["ordinal", "onehot", "spline"] = typer.Option(default=...),
+    kind: str = typer.Option(default=..., help="Ordinal, onehot or spline."),
     path_output: Path = typer.Option(default=...),
 ):
     logger.info("Reading in data for datetime transformation.")
