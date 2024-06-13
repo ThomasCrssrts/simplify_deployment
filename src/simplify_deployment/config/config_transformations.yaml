@@ -1,8 +1,6 @@
 - kind: first_derivative
   columns: 
     - siCumulative
-    - nrvCumulative
-    - nrvCumulative
 - kind: second_derivative
   columns: 
     - siCumulative
