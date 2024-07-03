@@ -1,0 +1,57 @@
+minute:
+  siCumulative:
+    min_lag: 25
+    max_lag: 28
+    transformations:
+      - first_derivative
+      - second_derivative
+      - cumsum_during_quarter
+    filters:
+    - kind: band_pass
+      period_hours: 24
+    - kind: band_pass
+      period_hours: 12
+    - kind: high_pass
+      period_hours: 24
+    - kind: low_pass
+      period_hours: 24
+  nrvCumulative:
+    min_lag: 25
+    max_lag: 30
+    transformations:
+      - first_derivative
+      - second_derivative
+      - cumsum_during_quarter
+    filters:
+    - kind: band_pass
+      period_hours: 24
+    - kind: band_pass
+      period_hours: 1
+    - kind: high_pass
+      period_hours: 24
+    - kind: low_pass
+      period_hours: 24
+  Alpha:
+    min_lag: 25
+    max_lag: 28
+quarter:
+  France_Export:
+    min_lag: 30
+    max_lag: 100
+    transformations:
+      - first_derivative
+      - second_derivative
+    filters:
+    - kind: band_pass
+      period_hours: 24
+    - kind: band_pass
+      period_hours: 12
+    - kind: high_pass
+      period_hours: 24
+    - kind: low_pass
+      period_hours: 24
+datetime:
+  ordinal
+  
+
+
