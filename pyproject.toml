@@ -18,11 +18,12 @@ scipy = "^1.13.1"
 pydantic = "^2.7.3"
 scikit-learn = "^1.5.0"
 
-[tool.black]
-line-length = 80
-
 [tool.isort]
 profile = "black"
+multi_line_output = 3
+
+[tool.black]
+line-length = 80
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
