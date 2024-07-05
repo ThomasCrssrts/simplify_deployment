@@ -55,11 +55,14 @@ class Organism:
                         }
                     )
                 )
+        if transformation_dfs == []:
+            return pd.DataFrame()
+        else:
             transformation_df = pd.concat(
                 transformation_dfs,
                 axis=0,
             )
-        return transformation_df
+            return transformation_df
 
     def _create_genome_filter(
         self,
@@ -95,11 +98,14 @@ class Organism:
                         }
                     )
                 )
-        filters_df = pd.concat(
-            filters_dfs,
-            axis=0,
-        )
-        return filters_df
+        if filters_dfs == []:
+            return pd.DataFrame()
+        else:
+            filters_df = pd.concat(
+                filters_dfs,
+                axis=0,
+            )
+            return filters_df
 
     def _create_genome_base(
         self,
@@ -128,11 +134,14 @@ class Organism:
                     }
                 )
             )
-        base_df = pd.concat(
-            base_dfs,
-            axis=0,
-        )
-        return base_df
+        if base_dfs == []:
+            return pd.DataFrame()
+        else:
+            base_df = pd.concat(
+                base_dfs,
+                axis=0,
+            )
+            return base_df
 
     def init_random_genome(
         self,
@@ -419,7 +428,7 @@ class Organism:
             setattr(self, gen, gen_new)
         return
 
-    def get_n_variables(self) -> int:
+    def get_n_variables_used(self) -> int:
         total = 0
         for gen in [
             "genome_minute_base",
@@ -436,11 +445,47 @@ class Organism:
             total += df["selected"].astype(int).sum()
         return total
 
+    def get_n_variables_possible(self) -> int:
+        total = 0
+        for gen in [
+            "genome_minute_base",
+            "genome_minute_filter",
+            "genome_minute_transfo",
+            "genome_quarter_base",
+            "genome_quarter_filter",
+            "genome_quarter_transfo",
+        ]:
+            df = getattr(
+                self,
+                gen,
+            )
+            total += df["selected"].shape[0]
+        return total
+
+    def get_variables_as_list_of_str(self) -> list[str]:
+        text_list = []
+        for gen in [
+            "genome_minute_base",
+            "genome_minute_filter",
+            "genome_minute_transfo",
+            "genome_quarter_base",
+            "genome_quarter_filter",
+            "genome_quarter_transfo",
+        ]:
+            df = getattr(
+                self,
+                gen,
+            )
+            df = df.loc[df["selected"], :]
+            if not (df.empty):
+                text_list.append(f"{df}")
+        return text_list
+
     def __lt__(self, other: "Organism") -> bool:
         if other.fitness > self.fitness:
             return True
         elif other.fitness == self.fitness:
-            if other.get_n_variables() < self.get_n_variables():
+            if other.get_n_variables_used() < self.get_n_variables_used():
                 return True
             else:
                 return False
