@@ -387,21 +387,28 @@ class Organism:
                 second_organism,
                 gen,
             )
-            gen_new = gen_first_org.copy()
-            mask = np.random.choice(
-                a=[True, False],
-                p=[1 / 2, 1 / 2],
-                replace=True,
-                size=gen_new.shape[0],
-            )
-            gen_new["selected"] = (mask & gen_first_org["selected"]) | (
-                ~mask & gen_second_org["selected"]
-            )
-            setattr(
-                new_org,
-                gen,
-                gen_new,
-            )
+            if not (gen_first_org.empty | gen_second_org.empty):
+                gen_new = gen_first_org.copy()
+                mask = np.random.choice(
+                    a=[True, False],
+                    p=[1 / 2, 1 / 2],
+                    replace=True,
+                    size=gen_new.shape[0],
+                )
+                gen_new["selected"] = (mask & gen_first_org["selected"]) | (
+                    ~mask & gen_second_org["selected"]
+                )
+                setattr(
+                    new_org,
+                    gen,
+                    gen_new,
+                )
+            else:
+                setattr(
+                    new_org,
+                    gen,
+                    pd.DataFrame(),
+                )
         return new_org
 
     def mutate(self, mutation_chance: float = 0.05) -> None:
@@ -417,16 +424,18 @@ class Organism:
                 self,
                 gen,
             )
-            gen_new = gen_old.copy()
-            toggle = np.random.choice(
-                a=[True, False],
-                p=[mutation_chance, 1 - mutation_chance],
-                size=gen_new.shape[0],
-            )
-            # Mutations are xor with toggle.
-            gen_new["selected"] = gen_old["selected"] ^ toggle
-            setattr(self, gen, gen_new)
-        return
+            if not (gen_old.empty):
+                gen_new = gen_old.copy()
+                toggle = np.random.choice(
+                    a=[True, False],
+                    p=[mutation_chance, 1 - mutation_chance],
+                    size=gen_new.shape[0],
+                )
+                # Mutations are xor with toggle.
+                gen_new["selected"] = gen_old["selected"] ^ toggle
+                setattr(self, gen, gen_new)
+            else:
+                setattr(self, gen, pd.DataFrame())
 
     def get_n_variables_used(self) -> int:
         total = 0
@@ -442,7 +451,8 @@ class Organism:
                 self,
                 gen,
             )
-            total += df["selected"].astype(int).sum()
+            if not (df.empty):
+                total += df["selected"].astype(int).sum()
         return total
 
     def get_n_variables_possible(self) -> int:
@@ -459,7 +469,8 @@ class Organism:
                 self,
                 gen,
             )
-            total += df["selected"].shape[0]
+            if not (df.empty):
+                total += df["selected"].shape[0]
         return total
 
     def get_variables_as_list_of_str(self) -> list[str]:
@@ -476,8 +487,8 @@ class Organism:
                 self,
                 gen,
             )
-            df = df.loc[df["selected"], :]
             if not (df.empty):
+                df = df.loc[df["selected"], :]
                 text_list.append(f"{df}")
         return text_list
 
