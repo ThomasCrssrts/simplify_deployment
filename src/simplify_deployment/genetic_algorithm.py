@@ -61,16 +61,18 @@ def genetic_algorithm(
                 X_minute=X,
             )
         population = sorted(population, reverse=True)
+        best_org = population[0]
         if not (path_best_genome is None):
-            population[0].to_yaml(path_best_genome)
+            best_org.to_yaml(path_best_genome)
         logger.info(f"\nGeneration {n_generation}:")
-        logger.info(f"Best fitness: {population[0].fitness}")
+        logger.info(f"Best fitness: {best_org.fitness}")
         logger.info(
             "Best organism used {} variables".format(
-                population[0].get_n_variables_used(),
+                best_org.get_n_variables_used(),
             )
         )
-        vars_used = population[0].get_variables_as_list_of_str()
+
+        vars_used = best_org.get_variables_as_list_of_str()
         logger.info("The variables used were:")
         for text in vars_used:
             logger.info("\n")
@@ -140,21 +142,4 @@ def genetic_algorithm(
         population = offspring
 
     logger.info("\n All generations done. Retrieving the best organism.")
-    for organism in population:
-        organism.calculate_fitness(
-            y=y,
-            X_minute=X,
-        )
-    population = sorted(population, reverse=True)
-    logger.info(
-        "The final organism used {} variables".format(
-            population[0].get_n_variables_used(),
-        )
-    )
-    logger.info("The final best organism used following variables:")
-    vars_used = population[0].get_variables_as_list_of_str()
-    for text in vars_used:
-        logger.info("\n")
-        logger.info(text)
-
-    return population[0]
+    return best_org
