@@ -6,6 +6,7 @@ from typing import Literal, Tuple, Type, TypeVar
 
 import numpy as np
 import pandas as pd
+import yaml
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import ShuffleSplit, cross_val_score
 
@@ -14,6 +15,7 @@ from simplify_deployment.config_utils import (
     Filter,
     Valid_transformation,
 )
+from simplify_deployment.genome_validator import Genome_validator
 
 T = TypeVar("T", bound="Organism")
 
@@ -203,6 +205,12 @@ class Organism:
             )
         return
 
+    def _init_empty_genome(
+        self,
+    ) -> None:
+        self.init_random_genome(0)
+        return
+
     def _df_from_base_genomes(
         self,
         X_minute,
@@ -321,6 +329,13 @@ class Organism:
         y: pd.DataFrame,
         X_minute: pd.DataFrame,
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
+        dfs = [
+            y,
+            self._df_from_base_genomes(X_minute),
+            self._df_from_filter_genomes(X_minute),
+            self._df_from_transfo_genomes(X_minute),
+        ]
+        non_empty_dfs = [x for x in dfs if not (x.empty)]
         y_X = reduce(
             lambda a, b: pd.merge(
                 a,
@@ -329,12 +344,7 @@ class Organism:
                 right_index=True,
                 how="inner",
             ),
-            [
-                y,
-                self._df_from_base_genomes(X_minute),
-                self._df_from_filter_genomes(X_minute),
-                self._df_from_transfo_genomes(X_minute),
-            ],
+            non_empty_dfs,
         )
         return y_X.iloc[:, 0], y_X.iloc[:, 1:]
 
@@ -489,8 +499,68 @@ class Organism:
             )
             if not (df.empty):
                 df = df.loc[df["selected"], :]
-                text_list.append(f"{df}")
+                if not (df.empty):
+                    text_list.append(f"{df}")
         return text_list
+
+    def to_yaml(
+        self,
+        path_yaml: Path,
+    ) -> None:
+        data_to_dump = {}
+        for gen in [
+            "genome_minute_base",
+            "genome_minute_filter",
+            "genome_minute_transfo",
+            "genome_quarter_base",
+            "genome_quarter_filter",
+            "genome_quarter_transfo",
+        ]:
+            df = getattr(
+                self,
+                gen,
+            )
+            if not (df.empty):
+                df = df.loc[df["selected"], :].drop(columns="selected")
+            if not (df.empty):
+                data_to_dump[gen] = df.to_dict(
+                    orient="records",
+                )
+        with open(path_yaml, "w") as f:
+            yaml.dump(
+                data_to_dump,
+                f,
+                indent=4,
+                default_flow_style=False,
+            )
+
+    @classmethod
+    def from_yaml(
+        cls,
+        path_config: Path,
+        path_genome: Path,
+    ) -> "Organism":
+        validated = Genome_validator.load(path_genome=path_genome)
+        org = Organism(path_config)
+        org._init_empty_genome()
+        for field in validated.model_fields_set:
+            org_df = getattr(
+                org,
+                field,
+            ).copy()
+            validated_df = pd.concat(
+                [x.df for x in getattr(validated, field)], axis=0
+            )
+            merged_df = pd.merge(
+                org_df.drop(columns="selected"),
+                validated_df.drop(columns="selected"),
+                how="left",
+                indicator=True,
+            )
+            mask = merged_df["_merge"] == "both"
+            org_df["selected"] = mask.values
+            setattr(org, field, org_df)
+        return org
 
     def __lt__(self, other: "Organism") -> bool:
         if other.fitness > self.fitness:
