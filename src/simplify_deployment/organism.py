@@ -216,10 +216,15 @@ class Organism:
         X_minute,
     ) -> pd.DataFrame:
         series_list = []
-        for item in [
-            self.genome_minute_base,
-            self.genome_quarter_base,
-        ]:
+        non_empty = [
+            x
+            for x in [
+                self.genome_minute_base,
+                self.genome_quarter_base,
+            ]
+            if not x.empty
+        ]
+        for item in non_empty:
             selected = item.loc[item["selected"], :]
             if not (selected.empty):
                 for index, row in selected.iterrows():
@@ -230,28 +235,34 @@ class Organism:
                             .rename(f'{row["variable"]}_lag_{row["lag"]}')
                         )
                     )
-                df = reduce(
-                    lambda a, b: pd.merge(
-                        a,
-                        b,
-                        left_index=True,
-                        right_index=True,
-                    ),
-                    series_list,
-                )
-                return df
-            else:
-                return pd.DataFrame()
+        if not (series_list == []):
+            df = reduce(
+                lambda a, b: pd.merge(
+                    a,
+                    b,
+                    left_index=True,
+                    right_index=True,
+                ),
+                series_list,
+            )
+            return df
+        else:
+            return pd.DataFrame()
 
     def _df_from_filter_genomes(
         self,
         X_minute: pd.DataFrame,
     ) -> pd.DataFrame:
         series_list = []
-        for item in [
-            self.genome_minute_filter,
-            self.genome_quarter_filter,
-        ]:
+        non_empty = [
+            x
+            for x in [
+                self.genome_minute_filter,
+                self.genome_quarter_filter,
+            ]
+            if not x.empty
+        ]
+        for item in non_empty:
             selected = item.loc[item["selected"], :]
             if not (selected.empty):
                 for index, row in selected.iterrows():
@@ -273,28 +284,34 @@ class Organism:
                         )
                     )
                     series_list.append(filtered)
-                df = reduce(
-                    lambda a, b: pd.merge(
-                        a,
-                        b,
-                        left_index=True,
-                        right_index=True,
-                    ),
-                    series_list,
-                )
-                return df
-            else:
-                return pd.DataFrame()
+        if not (series_list == []):
+            df = reduce(
+                lambda a, b: pd.merge(
+                    a,
+                    b,
+                    left_index=True,
+                    right_index=True,
+                ),
+                series_list,
+            )
+            return df
+        else:
+            return pd.DataFrame()
 
     def _df_from_transfo_genomes(
         self,
         X_minute: pd.DataFrame,
     ) -> pd.DataFrame:
         series_list = []
-        for item in [
-            self.genome_minute_transfo,
-            self.genome_quarter_transfo,
-        ]:
+        non_empty = [
+            x
+            for x in [
+                self.genome_minute_transfo,
+                self.genome_quarter_transfo,
+            ]
+            if not x.empty
+        ]
+        for item in non_empty:
             selected = item.loc[item["selected"], :]
             if not (selected.empty):
                 for index, row in selected.iterrows():
@@ -311,18 +328,19 @@ class Organism:
                         )
                     )
                     series_list.append(transformed)
-                df = reduce(
-                    lambda a, b: pd.merge(
-                        a,
-                        b,
-                        left_index=True,
-                        right_index=True,
-                    ),
-                    series_list,
-                )
-                return df
-            else:
-                return pd.DataFrame()
+        if not (series_list == []):
+            df = reduce(
+                lambda a, b: pd.merge(
+                    a,
+                    b,
+                    left_index=True,
+                    right_index=True,
+                ),
+                series_list,
+            )
+            return df
+        else:
+            return pd.DataFrame()
 
     def create_y_X(
         self,
