@@ -19,24 +19,20 @@ def create_target(
     minute_data: pd.DataFrame,
     target_name: str = "siCumulative",
 ) -> pd.DataFrame:
-    logger.info("starting target creation")
     minute_data = minute_data.sort_index(ascending=True)
     target: pd.Series = minute_data.loc[:, target_name]
     target = target.loc[target.index.minute % 15 == 14]
-    logger.info("Target created")
     return target
 
 
 def resample_qh_data(
     qh_data: pd.DataFrame,
 ) -> pd.DataFrame:
-    logger.info("Starting resampling of qh data.")
     qh_data = qh_data.resample(
         rule="1min",
         closed="left",
         label="left",
     ).ffill()
-    logger.info("Resampling of qh data done.")
     return qh_data
 
 
