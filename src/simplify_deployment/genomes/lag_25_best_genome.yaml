@@ -7,35 +7,26 @@ genome_minute_base:
     variable: siCumulative
 -   lag: 28
     variable: siCumulative
-genome_minute_filter:
--   filter: band_pass
-    filter_period_hours: 24.0
-    lag: 302
-    variable: siCumulative
--   filter: band_pass
-    filter_period_hours: 24.0
-    lag: 2007
-    variable: siCumulative
--   filter: low_pass
-    filter_period_hours: 1.0
-    lag: 1042
-    variable: siCumulative
--   filter: low_pass
-    filter_period_hours: 0.25
-    lag: 1501
-    variable: siCumulative
 genome_quarter_base:
--   lag: 40
-    variable: sI_MW
--   lag: 70
-    variable: sI_MW
--   lag: 85
-    variable: sI_MW
+-   lag: -20
+    variable: loaD_ID_MW
+-   lag: -5
+    variable: loaD_ID_MW
+-   lag: 10
+    variable: loaD_ID_MW
 -   lag: 25
     variable: loaD_ID_MW
 -   lag: 40
     variable: loaD_ID_MW
+-   lag: 55
+    variable: loaD_ID_MW
+-   lag: 70
+    variable: loaD_ID_MW
+-   lag: 85
+    variable: loaD_ID_MW
 -   lag: -20
+    variable: dsO_ID_MW
+-   lag: -5
     variable: dsO_ID_MW
 -   lag: 10
     variable: dsO_ID_MW
@@ -43,9 +34,11 @@ genome_quarter_base:
     variable: dsO_ID_MW
 -   lag: 40
     variable: dsO_ID_MW
+-   lag: 55
+    variable: dsO_ID_MW
 -   lag: 70
     variable: dsO_ID_MW
--   lag: 175
+-   lag: 85
     variable: dsO_ID_MW
 -   lag: -20
     variable: xB_ID_MW

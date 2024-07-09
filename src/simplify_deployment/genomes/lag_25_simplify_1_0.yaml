@@ -8,14 +8,6 @@ genome_minute_base:
 -   variable: siCumulative
     lag: 28
 genome_quarter_base:
--   variable: sI_MW
-    lag: 85
--   variable: sI_MW
-    lag: 70
--   variable: sI_MW
-    lag: 55
--   variable: sI_MW
-    lag: 40
 -   variable: loaD_ID_MW
     lag: 85
 -   variable: loaD_ID_MW

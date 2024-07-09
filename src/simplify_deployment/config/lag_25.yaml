@@ -32,9 +32,6 @@ minute:
     - kind: high_pass
       period_hours: 0.25
 quarter:
-  sI_MW:
-    min_lag: 40
-    max_lag: 2880
   loaD_ID_MW:
     min_lag: -50
     max_lag: 2880
