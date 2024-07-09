@@ -1,0 +1,29 @@
+genome_minute_base:
+-   lag: 1802
+    variable: nrvCumulative
+genome_minute_filter:
+-   filter: band_pass
+    filter_period_hours: 0.25
+    lag: 2875
+    variable: nrvCumulative
+-   filter: low_pass
+    filter_period_hours: 1.0
+    lag: 500
+    variable: nrvCumulative
+-   filter: low_pass
+    filter_period_hours: 1.0
+    lag: 924
+    variable: nrvCumulative
+genome_minute_transfo:
+-   lag: 1556
+    transformation: cumsum_during_quarter
+    variable: siCumulative
+-   lag: 806
+    transformation: first_derivative
+    variable: nrvCumulative
+-   lag: 2645
+    transformation: first_derivative
+    variable: nrvCumulative
+-   lag: 551
+    transformation: second_derivative
+    variable: nrvCumulative

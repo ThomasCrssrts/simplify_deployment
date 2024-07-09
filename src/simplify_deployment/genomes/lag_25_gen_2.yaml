@@ -1,0 +1,10 @@
+genome_minute_base:
+-   variable: nrvCumulative
+    lag: 25
+-   variable: nrvCumulative
+    lag: 26
+-   variable: nrvCumulative
+    lag: 27
+-   variable: nrvCumulative
+    lag: 28
+
