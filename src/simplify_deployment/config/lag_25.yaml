@@ -31,41 +31,6 @@ minute:
       period_hours: 1
     - kind: high_pass
       period_hours: 0.25
-  nrvCumulative:
-    min_lag: 25
-    max_lag: 2880
-    transformations:
-      - first_derivative
-      - second_derivative
-      - cumsum_during_quarter
-    filters:
-    - kind: band_pass
-      period_hours: 24
-    - kind: band_pass
-      period_hours: 12
-    - kind: band_pass
-      period_hours: 1
-    - kind: band_pass
-      period_hours: 0.25
-    - kind: low_pass
-      period_hours: 24
-    - kind: low_pass
-      period_hours: 12
-    - kind: low_pass
-      period_hours: 1
-    - kind: low_pass
-      period_hours: 0.25
-    - kind: high_pass
-      period_hours: 24
-    - kind: high_pass
-      period_hours: 12
-    - kind: high_pass
-      period_hours: 1
-    - kind: high_pass
-      period_hours: 0.25
-  Alpha:
-    min_lag: 25
-    max_lag: 2880
 quarter:
   sI_MW:
     min_lag: 40
