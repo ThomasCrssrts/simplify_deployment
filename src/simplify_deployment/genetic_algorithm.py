@@ -42,15 +42,16 @@ def genetic_algorithm(
             chance_of_random_variable_to_be_in_organism,
         )
     # Add extras to population
-    population_extra = [
-        Organism.from_yaml(
-            path_config=path_config,
-            path_genome=x,
-        )
-        for x in extra_organisms
-    ]
-    population += population_extra
-    population_size = len(population)
+    if not (extra_organisms is None):
+        population_extra = [
+            Organism.from_yaml(
+                path_config=path_config,
+                path_genome=x,
+            )
+            for x in extra_organisms
+        ]
+        population += population_extra
+        population_size = len(population)
     # Do until we have had all generations
     for n_generation in range(n_generations):
         #  Sort all the organisms by fitness
@@ -109,13 +110,13 @@ def genetic_algorithm(
             child.mutate(mutation_chance=mutation_chance)
 
         # Keep only the first ones. Others die or get replaced.
+        if extra_organisms is None:
+            n_extra = 0
+        else:
+            n_extra = len(extra_organisms)
+
         offspring = offspring[
-            : (
-                population_size
-                - n_untouched
-                - number_of_deaths
-                - len(population_extra)
-            )
+            : (population_size - n_untouched - number_of_deaths - n_extra)
         ]
         offspring = offspring + population[:n_untouched]
         new_life = [Organism(path_config) for i in range(number_of_deaths)]
@@ -124,14 +125,17 @@ def genetic_algorithm(
                 chance_of_random_variable_to_be_in_organism,
             )
         # add extras again
-        population_extra = [
-            Organism.from_yaml(
-                path_config=path_config,
-                path_genome=x,
-            )
-            for x in extra_organisms
-        ]
-        offspring = offspring + new_life + population_extra
+        if not (extra_organisms is None):
+            population_extra = [
+                Organism.from_yaml(
+                    path_config=path_config,
+                    path_genome=x,
+                )
+                for x in extra_organisms
+            ]
+            offspring = offspring + new_life + population_extra
+        else:
+            offspring = offspring + new_life
         # Now offspring is the new generation and the circle of life continues
         population = offspring
 
