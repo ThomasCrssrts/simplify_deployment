@@ -1,5 +1,6 @@
 import logging
 from pathlib import Path
+from typing import Optional
 
 import numpy as np
 import pandas as pd
@@ -29,15 +30,27 @@ def genetic_algorithm(
     number_of_deaths: int = 10,
     mutation_chance: float = 1 / 1000,
     chance_of_random_variable_to_be_in_organism: float = 1 / 5000,
+    extra_organisms=Optional[list[Path]],
+    path_best_genome=Optional[Path],
 ) -> Organism:
-
     # Create starting population and populate them with random genomes.
-    population = [Organism(path_config) for i in range(population_size)]
+    population = [
+        Organism(path_config=path_config) for i in range(population_size)
+    ]
     for organism in population:
         organism.init_random_genome(
             chance_of_random_variable_to_be_in_organism,
         )
-
+    # Add extras to population
+    population_extra = [
+        Organism.from_yaml(
+            path_config=path_config,
+            path_genome=x,
+        )
+        for x in extra_organisms
+    ]
+    population += population_extra
+    population_size = len(population)
     # Do until we have had all generations
     for n_generation in range(n_generations):
         #  Sort all the organisms by fitness
@@ -47,6 +60,8 @@ def genetic_algorithm(
                 X_minute=X,
             )
         population = sorted(population, reverse=True)
+        if not (path_best_genome is None):
+            population[0].to_yaml(path_best_genome)
         logger.info(f"\nGeneration {n_generation}:")
         logger.info(f"Best fitness: {population[0].fitness}")
         logger.info(
@@ -95,7 +110,12 @@ def genetic_algorithm(
 
         # Keep only the first ones. Others die or get replaced.
         offspring = offspring[
-            : population_size - n_untouched - number_of_deaths
+            : (
+                population_size
+                - n_untouched
+                - number_of_deaths
+                - len(population_extra)
+            )
         ]
         offspring = offspring + population[:n_untouched]
         new_life = [Organism(path_config) for i in range(number_of_deaths)]
@@ -103,7 +123,15 @@ def genetic_algorithm(
             organism.init_random_genome(
                 chance_of_random_variable_to_be_in_organism,
             )
-        offspring = offspring + new_life
+        # add extras again
+        population_extra = [
+            Organism.from_yaml(
+                path_config=path_config,
+                path_genome=x,
+            )
+            for x in extra_organisms
+        ]
+        offspring = offspring + new_life + population_extra
         # Now offspring is the new generation and the circle of life continues
         population = offspring
 
