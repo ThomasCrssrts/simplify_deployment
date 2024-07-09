@@ -348,23 +348,26 @@ class Organism:
         X_minute: pd.DataFrame,
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         dfs = [
-            y,
             self._df_from_base_genomes(X_minute),
             self._df_from_filter_genomes(X_minute),
             self._df_from_transfo_genomes(X_minute),
         ]
         non_empty_dfs = [x for x in dfs if not (x.empty)]
-        y_X = reduce(
-            lambda a, b: pd.merge(
-                a,
-                b,
-                left_index=True,
-                right_index=True,
-                how="inner",
-            ),
-            non_empty_dfs,
-        )
-        return y_X.iloc[:, 0], y_X.iloc[:, 1:]
+        if not (non_empty_dfs == []):
+            non_empty_dfs = [y] + non_empty_dfs
+            y_X = reduce(
+                lambda a, b: pd.merge(
+                    a,
+                    b,
+                    left_index=True,
+                    right_index=True,
+                    how="inner",
+                ),
+                non_empty_dfs,
+            )
+            return y_X.iloc[:, 0], y_X.iloc[:, 1:]
+        else:
+            return pd.DataFrame(), pd.DataFrame()
 
     def calculate_fitness(
         self,
