@@ -1,2 +1,4 @@
 /data
 /tests
+/.git
+/.mypy_cache
