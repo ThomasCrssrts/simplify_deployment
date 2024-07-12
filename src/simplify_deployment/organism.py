@@ -460,7 +460,38 @@ class Organism:
                 )
         return new_org
 
-    def mutate(self, mutation_chance: float = 0.05) -> None:
+    def mutate(
+        self,
+        mutation_chance: float = 0.05,
+    ) -> None:
+
+        def probability_func(
+            df: pd.DataFrame,
+            n_neighbors: int = 1,
+        ) -> pd.DataFrame:
+            if df.shape[0] == 1:
+                df["chance"] = mutation_chance
+                return df
+            values_to_mutate = [
+                df["selected"]
+                .shift(
+                    i,
+                    fill_value=False,
+                )
+                .values
+                for i in range(
+                    -n_neighbors,
+                    n_neighbors + 1,
+                )
+            ]
+            selection = reduce(lambda a, b: a | b, values_to_mutate)
+            df["chance"] = np.where(
+                selection,
+                10 * mutation_chance,
+                mutation_chance,
+            )
+            return df
+
         for gen in [
             "genome_minute_base",
             "genome_minute_filter",
@@ -475,13 +506,25 @@ class Organism:
             )
             if not (gen_old.empty):
                 gen_new = gen_old.copy()
-                toggle = np.random.choice(
-                    a=[True, False],
-                    p=[mutation_chance, 1 - mutation_chance],
-                    size=gen_new.shape[0],
+                sort_group = list(gen_new.drop(columns="selected").columns)
+                probability_group = list(
+                    gen_new.drop(columns=["selected", "lag"]).columns
                 )
-                # Mutations are xor with toggle.
-                gen_new["selected"] = gen_old["selected"] ^ toggle
+                probability_df = (
+                    gen_new.sort_values(
+                        by=sort_group,
+                    )
+                    .groupby(
+                        probability_group,
+                        group_keys=False,
+                    )
+                    .apply(probability_func)
+                )
+                random_numbers = np.random.rand(probability_df.shape[0])
+                toggle = random_numbers < probability_df["chance"]
+                # Mutation is just an xor with the toggle
+                gen_new["selected"] = gen_new["selected"] ^ toggle
+                self.genome = gen_new
                 setattr(self, gen, gen_new)
             else:
                 setattr(self, gen, pd.DataFrame())
