@@ -33,11 +33,17 @@ class Organism:
         transformation_dfs = []
         # Minute data transformations
         if granularity == "minute":
-            config_items = config.minute.items()
-            step = 1
+            if not (config.minute is None):
+                config_items = config.minute.items()
+                step = 1
+            else:
+                return pd.DataFrame
         elif granularity == "qh":
-            config_items = config.quarter.items()
-            step = 15
+            if not (config.quarter is None):
+                config_items = config.quarter.items()
+                step = 15
+            else:
+                return pd.DataFrame()
         for key, value in config_items:
             lags = range(value.min_lag, value.max_lag + 1, step)
             if not (value.transformations is None):
@@ -73,11 +79,17 @@ class Organism:
     ) -> pd.DataFrame:
         filters_dfs = []
         if granularity == "minute":
-            config_items = config.minute.items()
-            step = 1
+            if not (config.minute is None):
+                config_items = config.minute.items()
+                step = 1
+            else:
+                return pd.DataFrame()
         elif granularity == "qh":
-            config_items = config.quarter.items()
-            step = 15
+            if not (config.quarter is None):
+                config_items = config.quarter.items()
+                step = 15
+            else:
+                return pd.DataFrame()
         for key, value in config_items:
             lags = range(value.min_lag, value.max_lag + 1, step)
             if not (value.filters is None):
@@ -116,11 +128,17 @@ class Organism:
     ) -> pd.DataFrame:
         base_dfs = []
         if granularity == "minute":
-            config_items = config.minute.items()
-            step = 1
+            if not (config.minute is None):
+                config_items = config.minute.items()
+                step = 1
+            else:
+                return pd.DataFrame()
         elif granularity == "qh":
-            config_items = config.quarter.items()
-            step = 15
+            if not (config.quarter is None):
+                config_items = config.quarter.items()
+                step = 15
+            else:
+                return pd.DataFrame()
         for key, value in config_items:
             lags = range(value.min_lag, value.max_lag + 1, step)
             prod = product(
