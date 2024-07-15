@@ -467,7 +467,7 @@ class Organism:
 
         def probability_func(
             df: pd.DataFrame,
-            n_neighbors: int = 1,
+            n_neighbors: int = 15,
         ) -> pd.DataFrame:
             if df.shape[0] == 1:
                 df["chance"] = mutation_chance
