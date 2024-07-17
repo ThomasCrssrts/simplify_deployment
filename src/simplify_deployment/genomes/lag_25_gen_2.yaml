@@ -1,10 +1,9 @@
 genome_minute_base:
--   variable: nrvCumulative
+-   variable: siCumulative
     lag: 25
--   variable: nrvCumulative
+-   variable: siCumulative
     lag: 26
--   variable: nrvCumulative
+-   variable: siCumulative
     lag: 27
--   variable: nrvCumulative
+-   variable: siCumulative
     lag: 28
-
