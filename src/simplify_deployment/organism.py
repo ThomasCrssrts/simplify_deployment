@@ -37,7 +37,7 @@ class Organism:
                 config_items = config.minute.items()
                 step = 1
             else:
-                return pd.DataFrame
+                return pd.DataFrame()
         elif granularity == "qh":
             if not (config.quarter is None):
                 config_items = config.quarter.items()
@@ -205,16 +205,20 @@ class Organism:
             config=config,
             granularity="qh",
         )
-
+        non_empty = [
+            x
+            for x in [
+                self.genome_minute_base,
+                self.genome_minute_filter,
+                self.genome_minute_transfo,
+                self.genome_quarter_base,
+                self.genome_quarter_filter,
+                self.genome_quarter_transfo,
+            ]
+            if not x.empty
+        ]
         # Now select rows randomly
-        for item in [
-            self.genome_minute_base,
-            self.genome_minute_filter,
-            self.genome_minute_transfo,
-            self.genome_quarter_base,
-            self.genome_quarter_filter,
-            self.genome_quarter_transfo,
-        ]:
+        for item in non_empty:
             item["selected"] = np.random.choice(
                 a=[True, False],
                 replace=True,
