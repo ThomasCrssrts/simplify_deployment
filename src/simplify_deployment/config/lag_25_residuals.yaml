@@ -1,0 +1,14 @@
+quarter:
+  loaD_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  dsO_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  xB_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  
+  
+
+
