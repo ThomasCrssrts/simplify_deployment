@@ -1,0 +1,257 @@
+minute:
+  siCumulative:
+    min_lag: 25
+    max_lag: 2880
+    transformations:
+      - first_derivative
+      - second_derivative
+      - cumsum_during_quarter
+    filters:
+    - kind: band_pass
+      period_hours: 24
+    - kind: band_pass
+      period_hours: 12
+    - kind: band_pass
+      period_hours: 1
+    - kind: band_pass
+      period_hours: 0.25
+    - kind: low_pass
+      period_hours: 24
+    - kind: low_pass
+      period_hours: 12
+    - kind: low_pass
+      period_hours: 1
+    - kind: low_pass
+      period_hours: 0.25
+    - kind: high_pass
+      period_hours: 24
+    - kind: high_pass
+      period_hours: 12
+    - kind: high_pass
+      period_hours: 1
+    - kind: high_pass
+      period_hours: 0.25
+  'Steel Site 1 Production':
+    min_lag: 25
+    max_lag: 2880
+    transformations:
+      - first_derivative
+      - second_derivative
+      - cumsum_during_quarter
+    filters:
+    - kind: band_pass
+      period_hours: 1103
+    - kind: low_pass
+      period_hours: 1103
+    - kind: high_pass
+      period_hours: 1103
+    - kind: band_pass
+      period_hours: 551.94
+    - kind: low_pass
+      period_hours: 551.94
+    - kind: high_pass
+      period_hours: 551.94
+    - kind: band_pass
+      period_hours: 169.82
+    - kind: low_pass
+      period_hours: 169.82
+    - kind: high_pass
+      period_hours: 169.82
+    - kind: band_pass
+      period_hours: 40.8
+    - kind: low_pass
+      period_hours: 40.8
+    - kind: high_pass
+      period_hours: 40.8
+    - kind: band_pass
+      period_hours: 12.2
+    - kind: low_pass
+      period_hours: 12.2
+    - kind: high_pass
+      period_hours: 12.2
+    - kind: band_pass
+      period_hours: 1.59
+    - kind: low_pass
+      period_hours: 1.59
+    - kind: high_pass
+      period_hours: 1.59
+    - kind: band_pass
+      period_hours: 0.68
+    - kind: low_pass
+      period_hours: 0.68
+    - kind: high_pass
+      period_hours: 0.68
+  'Alpha':
+      min_lag: 25
+      max_lag: 2880
+      transformations:
+        - first_derivative
+        - second_derivative
+        - cumsum_during_quarter
+      filters:
+      - kind: band_pass
+        period_hours: 24
+      - kind: low_pass
+        period_hours: 24
+      - kind: high_pass
+        period_hours: 24
+      - kind: band_pass
+        period_hours: 10.4
+      - kind: low_pass
+        period_hours: 10.4
+      - kind: high_pass
+        period_hours: 10.4
+      - kind: band_pass
+        period_hours: 3.3
+      - kind: low_pass
+        period_hours: 3.3
+      - kind: high_pass
+        period_hours: 3.3
+      - kind: band_pass
+        period_hours: 1.09
+      - kind: low_pass
+        period_hours: 1.09
+      - kind: high_pass
+        period_hours: 1.09
+      - kind: band_pass
+        period_hours: 0.64
+      - kind: low_pass
+        period_hours: 0.64
+      - kind: high_pass
+        period_hours: 0.64
+      - kind: band_pass
+        period_hours: 1.59
+      - kind: low_pass
+        period_hours: 1.59
+      - kind: high_pass
+        period_hours: 1.59
+      - kind: band_pass
+        period_hours: 0.68
+      - kind: low_pass
+        period_hours: 0.68
+      - kind: high_pass
+        period_hours: 0.68
+      - kind: band_pass
+        period_hours: 0.4
+      - kind: low_pass
+        period_hours: 0.4
+      - kind: high_pass
+        period_hours: 0.4
+      - kind: band_pass
+        period_hours: 0.25
+      - kind: low_pass
+        period_hours: 0.25
+      - kind: high_pass
+        period_hours: 0.25
+      - kind: band_pass
+        period_hours: 0.125
+      - kind: low_pass
+        period_hours: 0.125
+      - kind: high_pass
+        period_hours: 0.125
+      - kind: band_pass
+        period_hours: 0.083
+      - kind: low_pass
+        period_hours: 0.083
+      - kind: high_pass
+        period_hours: 0.083
+      - kind: band_pass
+        period_hours: 0.0625
+      - kind: low_pass
+        period_hours: 0.0625
+      - kind: high_pass
+        period_hours: 0.0625
+      - kind: band_pass
+        period_hours: 0.05
+      - kind: low_pass
+        period_hours: 0.05
+      - kind: high_pass
+        period_hours: 0.05
+  'Marginal incremental price':
+      min_lag: 25
+      max_lag: 2880
+      transformations:
+        - first_derivative
+        - second_derivative
+        - cumsum_during_quarter
+      filters:
+      - kind: band_pass
+        period_hours: 2207.7
+      - kind: low_pass
+        period_hours: 2207.7
+      - kind: high_pass
+        period_hours: 2207.7
+      - kind: band_pass
+        period_hours: 735.92
+      - kind: low_pass
+        period_hours: 735.92
+      - kind: high_pass
+        period_hours: 735.92
+      - kind: band_pass
+        period_hours: 200.7
+      - kind: low_pass
+        period_hours: 200.7
+      - kind: high_pass
+        period_hours: 200.7
+      - kind: band_pass
+        period_hours: 11.99
+      - kind: low_pass
+        period_hours: 11.99
+      - kind: high_pass
+        period_hours: 11.99
+      - kind: band_pass
+        period_hours: 6.01
+      - kind: low_pass
+        period_hours: 6.01
+      - kind: high_pass
+        period_hours: 6.01
+      - kind: band_pass
+        period_hours: 1.09
+      - kind: low_pass
+        period_hours: 1.09
+      - kind: high_pass
+        period_hours: 1.09
+      - kind: band_pass
+        period_hours: 0.25
+      - kind: low_pass
+        period_hours: 0.25
+      - kind: high_pass
+        period_hours: 0.25
+      - kind: band_pass
+        period_hours: 0.125
+      - kind: low_pass
+        period_hours: 0.125
+      - kind: high_pass
+        period_hours: 0.125
+      - kind: band_pass
+        period_hours: 0.083
+      - kind: low_pass
+        period_hours: 0.083
+      - kind: high_pass
+        period_hours: 0.083
+      - kind: band_pass
+        period_hours: 0.0625
+      - kind: low_pass
+        period_hours: 0.0625
+      - kind: high_pass
+        period_hours: 0.0625
+      - kind: band_pass
+        period_hours: 0.05
+      - kind: low_pass
+        period_hours: 0.05
+      - kind: high_pass
+        period_hours: 0.05
+quarter:
+  loaD_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  dsO_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  xB_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+
+  
+
+
