@@ -241,6 +241,80 @@ minute:
         period_hours: 0.05
       - kind: high_pass
         period_hours: 0.05
+  'aFRR-':
+      min_lag: 25
+      max_lag: 2880
+      transformations:
+        - first_derivative
+        - second_derivative
+        - cumsum_during_quarter
+      filters:
+      - kind: band_pass
+        period_hours: 2207.7
+      - kind: low_pass
+        period_hours: 2207.7
+      - kind: high_pass
+        period_hours: 2207.7
+      - kind: band_pass
+        period_hours: 1103.88
+      - kind: low_pass
+        period_hours: 1103.88
+      - kind: high_pass
+        period_hours: 1103.88
+      - kind: band_pass
+        period_hours: 169.82
+      - kind: low_pass
+        period_hours: 169.82
+      - kind: high_pass
+        period_hours: 169.82
+      - kind: band_pass
+        period_hours: 84.9
+      - kind: low_pass
+        period_hours: 84.9
+      - kind: high_pass
+        period_hours: 84.9
+      - kind: band_pass
+        period_hours: 12
+      - kind: low_pass
+        period_hours: 12
+      - kind: high_pass
+        period_hours: 12
+      - kind: band_pass
+        period_hours: 4.8
+      - kind: low_pass
+        period_hours: 4.8
+      - kind: high_pass
+        period_hours: 4.8
+      - kind: band_pass
+        period_hours: 1
+      - kind: low_pass
+        period_hours: 1
+      - kind: high_pass
+        period_hours: 1
+      - kind: band_pass
+        period_hours: 0.33
+      - kind: low_pass
+        period_hours: 0.33
+      - kind: high_pass
+        period_hours: 0.33
+      - kind: band_pass
+        period_hours: 0.25
+      - kind: low_pass
+        period_hours: 0.25
+      - kind: high_pass
+        period_hours: 0.25
+      - kind: band_pass
+        period_hours: 0.125
+      - kind: low_pass
+        period_hours: 0.125
+      - kind: high_pass
+        period_hours: 0.125
+      - kind: band_pass
+        period_hours: 0.083
+      - kind: low_pass
+        period_hours: 0.083
+      - kind: high_pass
+        period_hours: 0.083
 quarter:
   loaD_ID_MW:
     min_lag: -50
