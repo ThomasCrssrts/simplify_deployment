@@ -90,8 +90,8 @@ class Filter(BaseModel):
                 return butter(
                     N=2,
                     Wn=[
-                        1 / (self.period_hours * 60 + 5),
-                        1 / (self.period_hours * 60 - 5),
+                        1 / (self.period_hours * 60 * 1.01),
+                        1 / (self.period_hours * 60 / 1.01),
                     ],
                     btype="bp",
                     fs=1,
