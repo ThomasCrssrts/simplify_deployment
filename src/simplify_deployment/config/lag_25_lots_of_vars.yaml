@@ -431,6 +431,9 @@ quarter:
   xB_ID_MW:
     min_lag: -50
     max_lag: 2880
+  "CCGT Schedule":
+    min_lag: -50
+    max_lag: 2880
 
   
 
