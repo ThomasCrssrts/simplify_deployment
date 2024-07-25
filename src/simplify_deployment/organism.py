@@ -527,7 +527,7 @@ class Organism:
                 random_numbers = np.random.rand(probability_df.shape[0])
                 toggle = random_numbers < probability_df["chance"]
                 # Mutation is just an xor with the toggle
-                gen_new["selected"] = gen_new["selected"] ^ toggle
+                gen_new["selected"] = gen_new["selected"].values ^ toggle.values
                 self.genome = gen_new
                 setattr(self, gen, gen_new)
             else:
