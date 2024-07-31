@@ -1,0 +1,49 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+display_name: "Genetic algorithm predictions fold_9."
+description: "Predict data in a time series kfold fashion"
+command: >-
+  python ./src/simplify_deployment/predict_single.py
+  --path-config=${{inputs.path_config}}
+  --path-x-train=${{inputs.path_X_train}}
+  --path-x-test=${{inputs.path_X_test}}
+  --path-y-train=${{inputs.path_y_train}}
+  --path-y-test=${{inputs.path_y_test}}
+  --path-best-genome=${{outputs.path_best_genome}}
+  --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+  --extra-organisms=${{inputs.extra_organisms}}
+code: ..
+environment:
+  azureml:simplify_study_phase:1
+environment_variables: 
+  PYTHONPATH: src
+inputs:
+  path_config:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_25_lots_of_vars.yaml"
+  path_X_train:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/folds/X_train_fold_9.parquet"
+  path_X_test:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/folds/X_test_fold_9.parquet"
+  path_y_train:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/folds/y_train_fold_9.parquet"
+  path_y_test:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/folds/y_test_fold_9.parquet"
+  extra_organisms:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/lag_25_simplify_1_0.yaml" 
+outputs:
+  path_best_genome:
+    type: uri_file
+  path_to_save_predictions:
+    type: uri_file
+
+ 
+
+
+
+
