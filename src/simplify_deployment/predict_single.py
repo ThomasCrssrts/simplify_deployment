@@ -24,27 +24,24 @@ def main(
     path_config: Path = typer.Option(
         default=...,
     ),
-    path_X_train: Path = typer.Option(default=...),
-    path_X_test: Path = typer.Option(default=...),
-    path_y_train: Path = typer.Option(default=...),
-    path_y_test: Path = typer.Option(default=...),
+    path_to_folds: Path = typer.Option(default=...),
+    fold: int = typer.Option(default=...),
     path_best_genome: Path = typer.Option(default=...),
     path_to_save_predictions: Path = typer.Option(default=...),
     extra_organisms: list[Path] = typer.Option(default=...),
 ):
+
     X_train = pd.read_parquet(
-        path_X_train,
+        path_to_folds / f"X_train_fold_{fold}.parquet",
     )
     X_test = pd.read_parquet(
-        path_X_test,
+        path_to_folds / f"X_test_fold_{fold}.parquet",
     )
 
     y_train = pd.read_parquet(
-        path_y_train,
+        path_to_folds / f"y_train_fold_{fold}.parquet",
     )
-    y_test = pd.read_parquet(
-        path_y_test,
-    )
+    y_test = pd.read_parquet(path_to_folds / f"y_test_fold_{fold}.parquet")
 
     # Initialize org to determine amount of vars needed
     org = Organism(path_config)
@@ -56,7 +53,7 @@ def main(
         path_config=path_config,
         chance_of_random_variable_to_be_in_organism=1 / n_vars,
         mutation_chance=1 / n_vars,
-        n_generations=150,
+        n_generations=1,
         n_untouched=1,
         number_of_deaths=50,
         population_size=200,
@@ -83,8 +80,8 @@ def main(
     )
     predictions = pd.DataFrame(
         {
-            "prediction": model.predict(X_test_model),
-            "real": y_test_model.values,
+            "y_pred": model.predict(X_test_model),
+            "y_true": y_test_model.values,
         },
         index=y_test_model.index,
     )
