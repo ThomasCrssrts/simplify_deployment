@@ -1,0 +1,27 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+display_name: "kfold pipeline"
+experiment_name: test_pipeline
+settings:
+  default_compute: serverless
+inputs:
+  path_minute_data: 
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/minute_data.parquet"
+  path_qh_data:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/quarter_data.parquet"
+outputs:
+  predictions:
+    type: uri_folder
+jobs:
+  ${{each value in parent.inputs.path_minute_data}}:
+    type: command
+    command: >-
+      echo ${{ value }}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+

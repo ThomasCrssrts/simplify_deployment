@@ -1,12 +1,13 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 type: command
-display_name: "Genetic algorithm predictions 1 gen to validate"
-description: "Predict data in a time series kfold fashion with only"
+display_name: "testing predict single script"
+description: "testing predict single script. Should give same output as s1."
+experiment_name: test_pipeline
 command: >-
-  python ./src/simplify_deployment/predict_all.py
+  python ./src/simplify_deployment/predict_single.py
   --path-config=${{inputs.path_config}}
-  --path-minute-data=${{inputs.path_minute_data}}
-  --path-qh-data=${{inputs.path_qh_data}}
+  --path-to-folds=${{inputs.path_to_folds}}
+  --fold=${{inputs.fold}}
   --path-best-genome=${{outputs.path_best_genome}}
   --path-to-save-predictions=${{outputs.path_to_save_predictions}}
   --extra-organisms=${{inputs.extra_organisms}}
@@ -18,13 +19,11 @@ environment_variables:
 inputs:
   path_config:
     type: uri_file
-    path: /home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_25.yaml
-  path_minute_data:
-    type: uri_file
-    path: "/home/thomas/repos/simplify_deployment/data/simplify_1_0/minute_data.parquet" 
-  path_qh_data:
-    type: uri_file
-    path: "/home/thomas/repos/simplify_deployment/data/simplify_1_0/quarter_data.parquet" 
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_25.yaml"
+  path_to_folds:
+    type: uri_folder
+    path: "/home/thomas/repos/simplify_deployment/data/folds"
+  fold: 0
   extra_organisms:
     type: uri_file
     path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/lag_25_simplify_1_0.yaml" 
@@ -33,5 +32,3 @@ outputs:
     type: uri_file
   path_to_save_predictions:
     type: uri_file
-
- 

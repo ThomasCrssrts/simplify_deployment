@@ -1,0 +1,26 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+display_name: "testing create datasets"
+description: "testing create datasets"
+experiment_name: test_pipeline
+command: >-
+  python ./src/simplify_deployment/create_datasets.py
+  --path-minute-data=${{inputs.path_minute_data}}
+  --path-qh-data=${{inputs.path_qh_data}}
+  --path-to-save-folds=${{outputs.path_to_save_folds}}
+code: ..
+environment:
+  azureml:simplify_study_phase:1
+environment_variables: 
+  PYTHONPATH: src
+inputs:
+  path_minute_data:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/minute_data.parquet"
+  path_qh_data:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/quarter_data.parquet"
+  fold: 5
+outputs:
+  path_to_save_folds:
+    type: uri_folder
