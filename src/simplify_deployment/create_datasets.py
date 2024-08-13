@@ -1,9 +1,7 @@
 import logging
-from datetime import datetime
 from pathlib import Path
 
 import typer
-from dateutil import tz
 from sklearn.model_selection import TimeSeriesSplit
 
 from simplify_deployment.data_wrangling import create_target, create_X
@@ -29,14 +27,8 @@ def main(
         path_minute_data=path_minute_data,
         path_qh_data=path_qh_data,
     )
-    # load data untill 22 nov 2022 UTC. Later data has gaps.
-    X_minute = (
-        X_minute.loc[
-            : datetime(2022, 11, 22, 0, 0, 0, tzinfo=tz.UTC), :  # type: ignore
-        ]
-        .asfreq("1min")
-        .ffill()
-    )
+
+    X_minute = X_minute.asfreq("1min").ffill()
 
     tscv = TimeSeriesSplit(
         n_splits=12,
@@ -77,15 +69,15 @@ def main(
 
 
 if __name__ == "__main__":
-    main(
-        path_minute_data=Path(
-            "data/lots_of_vars/minute_data.parquet",
-        ),
-        path_qh_data=Path(
-            "data/lots_of_vars/quarter_data.parquet",
-        ),
-        path_to_save_folds=Path(
-            "/home/thomas/repos/simplify_deployment/data/folds"
-        ),
-    )
-    # typer.run(main)
+    # main(
+    #     path_minute_data=Path(
+    #         "/home/thomas/repos/simplify_deployment/data/simplify_1_0/s1_minute_data.parquet",
+    #     ),
+    #     path_qh_data=Path(
+    #         "/home/thomas/repos/simplify_deployment/data/simplify_1_0/s1_quarter_data.parquet",
+    #     ),
+    #     path_to_save_folds=Path(
+    #         "/home/thomas/repos/simplify_deployment/data/simplify_1_0/folds"
+    #     ),
+    # )
+    typer.run(main)
