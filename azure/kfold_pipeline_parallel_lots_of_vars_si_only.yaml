@@ -1,0 +1,480 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+display_name: "si only 100 gens parallel"
+experiment_name: test_pipeline
+settings:
+  default_compute: serverless
+inputs:
+  path_minute_data: 
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/lots_of_vars_minute_data.parquet"
+  path_qh_data:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/lots_of_vars_quarter_data.parquet"
+  path_config:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_25_si_only.yaml"
+  extra_organisms:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/lag_25_latest_4_si.yaml" 
+outputs:
+  predictions:
+    type: uri_file
+jobs:
+  create_datasets:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/create_datasets.py
+      --path-minute-data=${{inputs.path_minute_data}}
+      --path-qh-data=${{inputs.path_qh_data}}
+      --path-to-save-folds=${{outputs.path_to_save_folds}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_minute_data:
+        type: uri_file
+        path: ${{parent.inputs.path_minute_data}}
+      path_qh_data:
+        type: uri_file
+        path: ${{parent.inputs.path_qh_data}}
+    outputs:
+      path_to_save_folds:
+        type: uri_folder
+  train_fold_0:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 0
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_1:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 1
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_2:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 2
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_3:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 3
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_4:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 4
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_5:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 5
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_6:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 6
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_7:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 7
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_8:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 8
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_9:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 9
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_10:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 10
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  train_fold_11:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/predict_single.py
+      --path-config=${{inputs.path_config}}
+      --path-to-folds=${{inputs.path_to_folds}}
+      --fold=${{inputs.fold}}
+      --path-best-genome=${{outputs.path_best_genome}}
+      --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+      --extra-organisms=${{inputs.extra_organisms}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      path_config:
+        type: uri_file
+        path: ${{parent.inputs.path_config}}
+      path_to_folds:
+        type: uri_folder
+        path: ${{parent.jobs.create_datasets.outputs.path_to_save_folds}}
+      fold: 11
+      extra_organisms:
+        type: uri_file
+        path: ${{parent.inputs.extra_organisms}}
+    outputs:
+      path_best_genome:
+        type: uri_file
+      path_to_save_predictions:
+        type: uri_file
+  merge_results:
+    type: command
+    command: >-
+      python ./src/simplify_deployment/merge_datasets.py
+      --paths-predictions=${{inputs.output_fold_0}}
+      --paths-predictions=${{inputs.output_fold_1}}
+      --paths-predictions=${{inputs.output_fold_2}}
+      --paths-predictions=${{inputs.output_fold_3}}
+      --paths-predictions=${{inputs.output_fold_4}}
+      --paths-predictions=${{inputs.output_fold_5}}
+      --paths-predictions=${{inputs.output_fold_6}}
+      --paths-predictions=${{inputs.output_fold_7}}
+      --paths-predictions=${{inputs.output_fold_8}}
+      --paths-predictions=${{inputs.output_fold_9}}
+      --paths-predictions=${{inputs.output_fold_10}}
+      --paths-predictions=${{inputs.output_fold_11}}
+      --path-output=${{outputs.predictions}}
+    code: ..
+    environment:
+      azureml:simplify_study_phase:1
+    environment_variables: 
+      PYTHONPATH: src
+    inputs:
+      output_fold_0: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_0.outputs.path_to_save_predictions}}
+      output_fold_1: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_1.outputs.path_to_save_predictions}}
+      output_fold_2: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_2.outputs.path_to_save_predictions}}
+      output_fold_3: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_3.outputs.path_to_save_predictions}}
+      output_fold_4: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_4.outputs.path_to_save_predictions}}
+      output_fold_5: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_5.outputs.path_to_save_predictions}}
+      output_fold_6: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_6.outputs.path_to_save_predictions}}
+      output_fold_7: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_7.outputs.path_to_save_predictions}}
+      output_fold_8: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_8.outputs.path_to_save_predictions}}
+      output_fold_9: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_9.outputs.path_to_save_predictions}}
+      output_fold_10: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_10.outputs.path_to_save_predictions}}
+      output_fold_11: 
+        type: uri_file
+        path: ${{parent.jobs.train_fold_11.outputs.path_to_save_predictions }}  
+    outputs:
+      predictions:
+        type: uri_file
+        path: ${{parent.outputs.predictions}}
