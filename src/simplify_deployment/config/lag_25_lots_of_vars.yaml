@@ -81,7 +81,7 @@ minute:
       period_hours: 0.68
     - kind: high_pass
       period_hours: 0.68
-  'Alpha':
+  'alpha':
       min_lag: 25
       max_lag: 2880
       transformations:
@@ -167,7 +167,7 @@ minute:
         period_hours: 0.05
       - kind: high_pass
         period_hours: 0.05
-  'Marginal incremental price':
+  'marginalincrementalprice':
       min_lag: 25
       max_lag: 2880
       transformations:
@@ -389,7 +389,7 @@ minute:
         period_hours: 0.92
       - kind: high_pass
         period_hours: 0.92
-  'Positive imbalance price':
+  'positiveimbalanceprice':
       min_lag: 25
       max_lag: 2880
       transformations:
