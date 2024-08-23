@@ -70,9 +70,23 @@ def main(
         y_train,
         X_train,
     )
+    # For testing we take everything as some parts will be cut of by the lags.
+    # This avoid gaps and later we filter the correct ones
     y_test_model, X_test_model = best_organism.create_y_X(
-        y_test,
-        X_test,
+        pd.concat(
+            [
+                y_train,
+                y_test,
+            ],
+            axis=0,
+        ),
+        pd.concat(
+            [
+                X_train,
+                X_test,
+            ],
+            axis=0,
+        ),
     )
     model.fit(
         X_train_model,
@@ -85,6 +99,7 @@ def main(
         },
         index=y_test_model.index,
     )
+    predictions = predictions.loc[y_test.index, :]
     predictions.to_parquet(path_to_save_predictions)
 
 
