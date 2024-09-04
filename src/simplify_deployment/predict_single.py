@@ -53,7 +53,7 @@ def main(
         path_config=path_config,
         chance_of_random_variable_to_be_in_organism=1 / n_vars,
         mutation_chance=1 / n_vars,
-        n_generations=1,
+        n_generations=100,
         n_untouched=1,
         number_of_deaths=50,
         population_size=200,
@@ -99,7 +99,8 @@ def main(
         },
         index=y_test_model.index,
     )
-    predictions = predictions.loc[y_test.index, :]
+    mask = [x for x in y_test.index if x in predictions.index]
+    predictions = predictions.loc[mask, :]
     predictions.to_parquet(path_to_save_predictions)
 
 
