@@ -367,7 +367,7 @@ class Organism:
 
     def _spline_hour(
         self,
-        X_minute,
+        X_minute: pd.DataFrame,
     ) -> pd.DataFrame:
         n_knots = 12
         transformer = SplineTransformer(
@@ -380,7 +380,10 @@ class Organism:
                 n_knots,
             ).reshape(n_knots, 1),
         ).set_output(transform="pandas")
-        spline_hour = transformer.fit_transform(X_minute.index.hour)
+        hour_array = X_minute.index.hour.values.reshape(-1, 1)
+        spline_hour = transformer.fit_transform(hour_array).set_index(
+            X_minute.index
+        )
         return spline_hour
 
     def create_y_X(
