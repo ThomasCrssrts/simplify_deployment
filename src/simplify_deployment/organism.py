@@ -9,6 +9,7 @@ import pandas as pd
 import yaml
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import ShuffleSplit, cross_val_score
+from sklearn.preprocessing import OneHotEncoder
 
 from simplify_deployment.config_utils import (
     Config,
@@ -364,12 +365,22 @@ class Organism:
         else:
             return pd.DataFrame()
 
+    def _onehot_time(self, X_datetime: pd.DataFrame) -> pd.DataFrame:
+        encoder = OneHotEncoder(
+            categories=[range(24)], sparse_output=False, drop="first"
+        ).set_output(transform="pandas")
+        onehot = encoder.fit_transform(
+            X_datetime.index.hour.values.reshape(-1, 1)
+        ).set_index(X_datetime.index)
+        return onehot
+
     def create_y_X(
         self,
         y: pd.DataFrame,
         X_minute: pd.DataFrame,
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         dfs = [
+            self._onehot_time(X_minute),
             self._df_from_base_genomes(X_minute),
             self._df_from_filter_genomes(X_minute),
             self._df_from_transfo_genomes(X_minute),
