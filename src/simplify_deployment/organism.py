@@ -364,12 +364,27 @@ class Organism:
         else:
             return pd.DataFrame()
 
+    def _df_from_time_components(self, X_minute: pd.DataFrame) -> pd.DataFrame:
+        time_components = pd.DataFrame(
+            {
+                "hour_sin": np.sin(
+                    1 / 24 * np.pi * 2 * X_minute.index.hour,
+                ),
+                "hour_cos": np.cos(
+                    1 / 24 * np.pi * 2 * X_minute.index.hour,
+                ),
+            },
+            index=X_minute.index,
+        )
+        return time_components
+
     def create_y_X(
         self,
         y: pd.DataFrame,
         X_minute: pd.DataFrame,
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         dfs = [
+            self._df_from_time_components(X_minute),
             self._df_from_base_genomes(X_minute),
             self._df_from_filter_genomes(X_minute),
             self._df_from_transfo_genomes(X_minute),
