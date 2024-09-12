@@ -9,6 +9,7 @@ import pandas as pd
 import yaml
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import ShuffleSplit, cross_val_score
+from sklearn.preprocessing import SplineTransformer
 
 from simplify_deployment.config_utils import (
     Config,
@@ -364,12 +365,31 @@ class Organism:
         else:
             return pd.DataFrame()
 
+    def _spline_hour(
+        self,
+        X_minute,
+    ) -> pd.DataFrame:
+        n_knots = 12
+        transformer = SplineTransformer(
+            degree=3,
+            extrapolation="periodic",
+            include_bias=True,
+            knots=np.linspace(
+                0,
+                24,
+                n_knots,
+            ).reshape(n_knots, 1),
+        ).set_output(transform="pandas")
+        spline_hour = transformer.fit_transform(X_minute.index.hour)
+        return spline_hour
+
     def create_y_X(
         self,
         y: pd.DataFrame,
         X_minute: pd.DataFrame,
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         dfs = [
+            self._spline_hour(X_minute),
             self._df_from_base_genomes(X_minute),
             self._df_from_filter_genomes(X_minute),
             self._df_from_transfo_genomes(X_minute),
