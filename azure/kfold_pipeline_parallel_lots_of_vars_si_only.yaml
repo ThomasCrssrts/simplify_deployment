@@ -1,7 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
 display_name: "si only 100 gens parallel"
-experiment_name: test_pipeline
+experiment_name: lag_16
 settings:
   default_compute: serverless
 inputs:
@@ -13,10 +13,10 @@ inputs:
     path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/lots_of_vars_quarter_data.parquet"
   path_config:
     type: uri_file
-    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_25_si_only.yaml"
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_16.yaml"
   extra_organisms:
     type: uri_file
-    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/lag_25_latest_4_si.yaml" 
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/lag_16_simplify_1_0.yaml" 
 outputs:
   predictions:
     type: uri_file

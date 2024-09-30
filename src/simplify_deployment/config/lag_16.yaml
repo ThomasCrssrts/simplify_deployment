@@ -1,0 +1,47 @@
+minute:
+  siCumulative:
+    min_lag: 16
+    max_lag: 2880
+    transformations:
+      - first_derivative
+      - second_derivative
+      - cumsum_during_quarter
+    filters:
+    - kind: band_pass
+      period_hours: 24
+    - kind: band_pass
+      period_hours: 12
+    - kind: band_pass
+      period_hours: 1
+    - kind: band_pass
+      period_hours: 0.25
+    - kind: low_pass
+      period_hours: 24
+    - kind: low_pass
+      period_hours: 12
+    - kind: low_pass
+      period_hours: 1
+    - kind: low_pass
+      period_hours: 0.25
+    - kind: high_pass
+      period_hours: 24
+    - kind: high_pass
+      period_hours: 12
+    - kind: high_pass
+      period_hours: 1
+    - kind: high_pass
+      period_hours: 0.25
+quarter:
+  loaD_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  dsO_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  xB_ID_MW:
+    min_lag: -50
+    max_lag: 2880
+  
+  
+
+
