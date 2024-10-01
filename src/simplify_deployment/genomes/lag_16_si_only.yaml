@@ -1,0 +1,9 @@
+genome_minute_base:
+-   lag: 16
+    variable: siCumulative
+-   lag: 17
+    variable: siCumulative
+-   lag: 18
+    variable: siCumulative
+-   lag: 19
+    variable: siCumulative

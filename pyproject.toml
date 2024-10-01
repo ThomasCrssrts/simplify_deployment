@@ -21,6 +21,7 @@ plotly = "^5.22.0"
 nbformat = "^5.10.4"
 ipykernel = "^6.29.3"
 torch = "^2.4.1"
+polars = "^1.8.2"
 
 [tool.isort]
 profile = "black"
