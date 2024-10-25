@@ -13,10 +13,10 @@ inputs:
     path: "/home/thomas/repos/simplify_deployment/data/lots_of_vars/lots_of_vars_quarter_data.parquet"
   path_config:
     type: uri_file
-    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_16.yaml"
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/lag_16_si_only.yaml"
   extra_organisms:
     type: uri_file
-    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/lag_16_simplify_1_0.yaml" 
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/lag_16_si_only.yaml" 
 outputs:
   predictions:
     type: uri_file
