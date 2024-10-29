@@ -5,7 +5,7 @@ import torch.nn as nn
 from torch.utils.data import Dataset
 
 
-class Model(nn.Module):
+class TorchModel(nn.Module):
     def __init__(
         self,
         n_features: int,
@@ -33,7 +33,7 @@ class CustomLoss(nn.Module):
         weight_max_error: float = 1,
         weight_percentage_above_threshold: float = 1,
         weight_wrong_sign: float = 1,
-        sigmoid_steepness: float = 100,
+        sigmoid_steepness: float = 1,
     ) -> None:
         super().__init__()
         self.steepness = sigmoid_steepness
@@ -71,7 +71,7 @@ class CustomLoss(nn.Module):
         ).mean()
 
         # Percentage of time wrong sign
-        wrong_sign = (
+        loss_percentage_of_time_wrong_sign = (
             1 / (1 + torch.e ** (-self.steepness * (inputs * targets)))
         ).mean()
 
@@ -80,7 +80,7 @@ class CustomLoss(nn.Module):
             self.weight_max_error * max_error
             + self.weight_percentage_above_threshold
             * percentage_of_time_above_x
-            + self.weight_wrong_sign * wrong_sign
+            + self.weight_wrong_sign * loss_percentage_of_time_wrong_sign
         )
         return total_loss
 

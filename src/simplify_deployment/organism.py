@@ -6,14 +6,20 @@ from typing import Literal, Tuple, Type, TypeVar
 
 import numpy as np
 import pandas as pd
+import torch
 import yaml
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import ShuffleSplit, cross_val_score
+from sklearn.preprocessing import StandardScaler
+from torch.utils.data import DataLoader
 
 from simplify_deployment.config_utils import (
     Config,
     Filter,
     Valid_transformation,
+)
+from simplify_deployment.ga_torch_classes import (
+    CustomDataset,
+    CustomLoss,
+    TorchModel,
 )
 from simplify_deployment.genome_validator import Genome_validator
 
@@ -387,7 +393,8 @@ class Organism:
                 ),
                 non_empty_dfs,
             )
-            return y_X.iloc[:, 0], y_X.iloc[:, 1:]
+
+            return y_X.iloc[:, [0]], y_X.iloc[:, 1:]
         else:
             return pd.DataFrame(), pd.DataFrame()
 
@@ -403,16 +410,49 @@ class Organism:
         if y_model.empty:
             self.fitness = -np.inf
         else:
-            model = LinearRegression()
-            self.fitness = np.mean(
-                cross_val_score(
-                    model,
-                    X_model,
-                    y_model,
-                    scoring="neg_root_mean_squared_error",
-                    cv=ShuffleSplit(3, test_size=0.25),
-                )
+            # Make data
+            y_scaler = StandardScaler()
+            X_scaler = StandardScaler()
+            X_torch = torch.Tensor(
+                X_scaler.fit_transform(X_model),
             )
+            y_torch = torch.Tensor(y_scaler.fit_transform(y_model))
+
+            # setup
+            model = TorchModel(n_features=X_model.shape[1])
+            criterion = CustomLoss(
+                weight_max_error=1,
+                weight_percentage_above_threshold=1,
+                weight_wrong_sign=1,
+            )
+            dataloader = DataLoader(
+                CustomDataset(X_torch, y_torch),
+                batch_size=96,
+                shuffle=True,
+            )
+            optimizer = torch.optim.Adam(
+                model.parameters(),
+                lr=1e-4,
+            )
+            # Train model
+            for epoch in range(500):
+                epoch_loss = 0
+                for i, (X_batch, y_batch) in enumerate(dataloader):
+                    y_batch = y_batch.flatten()
+                    prediction = model(X_batch)
+                    optimizer.zero_grad()
+                    loss = criterion(prediction, y_batch)
+                    loss.backward()
+                    torch.nn.utils.clip_grad_norm_(
+                        model.parameters(),
+                        max_norm=1.0,
+                    )
+                    optimizer.step()
+                    epoch_loss += loss.item()
+                average_loss = epoch_loss / len(dataloader)
+                print(f"Average epoch loss: {average_loss}")
+                print(f"Epoch {epoch} done.")
+            self.fitness = -loss.item()
 
     @classmethod
     def reproduce(
@@ -468,7 +508,6 @@ class Organism:
         self,
         mutation_chance: float = 0.05,
     ) -> None:
-
         def probability_func(
             df: pd.DataFrame,
             n_neighbors: int = 15,
