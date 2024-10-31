@@ -30,7 +30,7 @@ jobs:
       --path-to-save-folds=${{outputs.path_to_save_folds}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -55,7 +55,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -86,7 +86,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -117,7 +117,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -148,7 +148,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -179,7 +179,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -210,7 +210,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -241,7 +241,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -272,7 +272,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -303,7 +303,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -334,7 +334,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -365,7 +365,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -396,7 +396,7 @@ jobs:
       --extra-organisms=${{inputs.extra_organisms}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
@@ -434,7 +434,7 @@ jobs:
       --path-output=${{outputs.predictions}}
     code: ..
     environment:
-      azureml:simplify_study_phase:1
+      azureml:simplify_study_phase:2
     environment_variables: 
       PYTHONPATH: src
     inputs:
