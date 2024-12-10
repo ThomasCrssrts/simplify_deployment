@@ -16,11 +16,7 @@ from simplify_deployment.config_utils import (
     Filter,
     Valid_transformation,
 )
-from simplify_deployment.ga_torch_classes import (
-    CustomDataset,
-    CustomLoss,
-    TorchModel,
-)
+from simplify_deployment.ga_torch_classes import CustomDataset, TorchModel
 from simplify_deployment.genome_validator import Genome_validator
 
 T = TypeVar("T", bound="Organism")
@@ -420,11 +416,12 @@ class Organism:
 
             # setup
             model = TorchModel(n_features=X_model.shape[1])
-            criterion = CustomLoss(
-                weight_max_error=1,
-                weight_percentage_above_threshold=1,
-                weight_wrong_sign=1,
-            )
+            # criterion = CustomLoss(
+            #     weight_max_error=1,
+            #     weight_percentage_above_threshold=1,
+            #     weight_wrong_sign=1,
+            # )
+            criterion = torch.nn.MSELoss()
             dataloader = DataLoader(
                 CustomDataset(X_torch, y_torch),
                 batch_size=96,
@@ -449,9 +446,9 @@ class Organism:
                     )
                     optimizer.step()
                     epoch_loss += loss.item()
-                average_loss = epoch_loss / len(dataloader)
-                print(f"Average epoch loss: {average_loss}")
-                print(f"Epoch {epoch} done.")
+                epoch_loss / len(dataloader)
+                # print(f"Average epoch loss: {average_loss}")
+                # print(f"Epoch {epoch} done.")
             self.fitness = -loss.item()
 
     @classmethod
