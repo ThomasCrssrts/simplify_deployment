@@ -1,0 +1,1829 @@
+minute:
+    alpha_cumulative_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_aalst_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_amercoeur_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_coo_1_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_coo_2_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_coo_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_coo_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_coo_5_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_coo_6_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_drogenbos_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_inesco_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_plate_taille_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_plate_taille_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    cumulative_avg_scheduled_deviation_power_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_amercoeur_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_coo_1_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_coo_2_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_coo_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_coo_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_coo_5_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_coo_6_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_eneco energy trade_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_northwestern_zeeb_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_nuclear_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_rwe_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_measured_power_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    delta_si_cumulative_minute:
+        max_lag: 2880
+        min_lag: 25
+    gross_downward_volume_inst_minute:
+        max_lag: 2880
+        min_lag: 25
+    gross_upward_volume_inst_minute:
+        max_lag: 2880
+        min_lag: 25
+    marginal_decremental_price_cumulative_minute:
+        max_lag: 2880
+        min_lag: 25
+    marginal_incremental_price_cumulative_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_aalst_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_amercoeur_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_angleur_41_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_angleur_42_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_avern_won_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_axpo solutions_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_basf_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_baudou_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_belwind_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_beringen_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_cfinf_1_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_cfinf_2_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_cfinf_3_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_coo_1_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_coo_2_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_coo_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_coo_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_coo_5_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_coo_6_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_degussa_gt_1_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_degussa_gt_2_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_doel_1_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_doel_2_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_doel_4_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_drogenbos_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_eneco energy trade_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_froidchapelle_won_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_herstal_ce_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_icowindparkzeeb_won_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_inesco_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_lanaken_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_langerbrugge_st_2_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_marcinelle_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_mermaid_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_next kraftwerke_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_nobelwind_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_norther_zeeb_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_northwestern_zeeb_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_northwind_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_nuclear_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_oorderen_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_plate_taille_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_plate_taille_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_rentel_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_ringvaart_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_rodenhuize_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_rwe_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_scheldelaan_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_seastar_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_sidma_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_slyke_ne_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_slyke_sw_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_tiha_1n_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_tiha_1s_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_tiha_3_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_to_pmin_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_villers_won_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    measured_power_zwijn_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    negative_imbalance_price_cumulative_minute:
+        max_lag: 2880
+        min_lag: 25
+    net_regulated_volume_inst_minute:
+        max_lag: 2880
+        min_lag: 25
+    nrv_cumulative_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    pmax_to_measured_power_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    positive_imbalance_price_cumulative_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_aalst_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_amercoeur_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_angleur_41_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_angleur_42_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_avern_won_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_basf_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_baudou_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_belwind_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_beringen_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_beveren_ineos_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_cfinf_1_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_cfinf_2_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_cfinf_3_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_coo_1_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_coo_2_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_coo_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_coo_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_coo_5_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_coo_6_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_degussa_gt_1_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_degussa_gt_2_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_doel_1_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_doel_2_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_doel_4_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_drogenbos_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_eneco energy trade_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_herstal_ce_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_icowindparkzeeb_won_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_inesco_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_lanaken_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_langerbrugge_st_2_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_marcinelle_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_mermaid_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_next kraftwerke_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_nobelwind_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_norther_zeeb_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_northwestern_zeeb_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_northwind_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_nuclear_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_oorderen_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_plate_taille_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_plate_taille_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_aalst_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_amercoeur_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_bttmup_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_coo_1_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_coo_2_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_coo_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_coo_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_coo_5_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_coo_6_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_drogenbos_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_inesco_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_plate_taille_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_plate_taille_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_additive_forecast_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_amercoeur_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_bttmup_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_coo_1_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_coo_2_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_coo_3_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_coo_4_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_coo_5_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_coo_6_ht_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_drogenbos_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_gas_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_hydro_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_inesco_gtst_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh1_growth_forecast_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_bttmup_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_bttmup_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_bttmup_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_bttmup_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_additive_forecast_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_bttmup_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_bttmup_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_bttmup_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_bttmup_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_electrabel_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_elia_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_luminus_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_qh2_growth_forecast_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_rentel_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_ringvaart_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_rodenhuize_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_rwe_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_scheldelaan_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_seastar_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_sidma_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_slyke_ne_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_slyke_sw_wof_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_st_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_tiha_1n_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_tiha_1s_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_tiha_3_nuc_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_total_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_villers_won_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_wind offshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_wind onshore_minute:
+        max_lag: 2880
+        min_lag: 25
+    schedule_deviation_power_zwijn_gt_minute:
+        max_lag: 2880
+        min_lag: 25
+    si_cumulative_minute:
+        filters:
+        -   kind: band_pass
+            period_hours: 24
+        -   kind: band_pass
+            period_hours: 12
+        -   kind: band_pass
+            period_hours: 1
+        -   kind: band_pass
+            period_hours: 0.25
+        -   kind: low_pass
+            period_hours: 24
+        -   kind: low_pass
+            period_hours: 12
+        -   kind: low_pass
+            period_hours: 1
+        -   kind: low_pass
+            period_hours: 0.25
+        -   kind: high_pass
+            period_hours: 24
+        -   kind: high_pass
+            period_hours: 12
+        -   kind: high_pass
+            period_hours: 1
+        -   kind: high_pass
+            period_hours: 0.25
+        max_lag: 2880
+        min_lag: 25
+        transformations:
+        - first_derivative
+        - second_derivative
+        - cumsum_during_quarter
+    si_inst_minute:
+        max_lag: 2880
+        min_lag: 25
+quarter:
+    alpha_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_solar_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_solar_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_solar_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_solar_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_solar_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_solar_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_to_last_solar_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_to_last_wind_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_to_last_wind_offshore_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_to_last_wind_onshore_dso_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_to_last_wind_onshore_elia_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_offshore_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_offshore_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_offshore_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_offshore_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_offshore_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_offshore_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_onshore_dso_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_onshore_dso_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_onshore_dso_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_onshore_dso_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_onshore_dso_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_onshore_dso_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_onshore_elia_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_onshore_elia_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_onshore_elia_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_onshore_elia_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_11pm_wind_onshore_elia_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_onshore_elia_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_11pm_wind_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_load_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_load_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_load_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_load_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_load_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_residual_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_solar_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_solar_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_solar_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_solar_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_solar_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_solar_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_to_last_load_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_to_last_solar_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_to_last_wind_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_to_last_wind_offshore_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_to_last_wind_onshore_dso_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_to_last_wind_onshore_elia_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_offshore_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_offshore_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_offshore_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_offshore_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_offshore_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_offshore_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_onshore_dso_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_onshore_dso_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_onshore_dso_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_onshore_dso_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_onshore_dso_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_onshore_dso_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_onshore_elia_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_onshore_elia_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_onshore_elia_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_onshore_elia_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    da_6pm_wind_onshore_elia_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_onshore_elia_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    da_6pm_wind_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_11pm_solar_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_11pm_solar_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_to_last_solar_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_to_last_wind_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_to_last_wind_offshore_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_to_last_wind_onshore_dso_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_to_last_wind_onshore_elia_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_wind_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_11pm_wind_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_wind_offshore_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_11pm_wind_offshore_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_wind_onshore_dso_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_11pm_wind_onshore_dso_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_11pm_wind_onshore_elia_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_11pm_wind_onshore_elia_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_load_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_6pm_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_residual_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_solar_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_6pm_solar_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_to_last_load_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_to_last_solar_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_to_last_wind_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_to_last_wind_offshore_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_to_last_wind_onshore_dso_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_to_last_wind_onshore_elia_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_wind_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_6pm_wind_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_wind_offshore_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_6pm_wind_offshore_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_wind_onshore_dso_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_6pm_wind_onshore_dso_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_da_6pm_wind_onshore_elia_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_da_6pm_wind_onshore_elia_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_last_load_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_last_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_last_residual_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_last_solar_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_last_solar_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_last_wind_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_last_wind_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_last_wind_offshore_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_last_wind_offshore_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_last_wind_onshore_dso_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_last_wind_onshore_dso_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_last_wind_onshore_elia_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_last_wind_onshore_elia_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_load_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_marginal_decremental_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_marginal_incremental_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_negative_imbalance_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_nrv_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_positive_imbalance_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_residual_load_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_scheduled_power_amercoeur_gtst_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_baudou_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_coo_1_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_coo_2_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_coo_3_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_coo_4_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_coo_6_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_drogenbos_gtst_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_electrabel_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_elia_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_eneco energy trade_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_gas_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_gtst_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_hydro_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_luminus_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_nobelwind_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_norther_zeeb_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_rentel_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_rwe_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_seastar_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_total_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_scheduled_power_wind offshore_qh:
+        max_lag: 2880
+        min_lag: -20
+    delta_si_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_solar_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_wind_offshore_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_wind_onshore_dso_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_wind_onshore_elia_qh:
+        max_lag: 2880
+        min_lag: 25
+    delta_wind_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_load_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_load_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_load_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_load_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_load_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_residual_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_solar_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_solar_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_solar_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_solar_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_solar_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_solar_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_offshore_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_offshore_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_offshore_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_offshore_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_offshore_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_offshore_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_onshore_dso_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_onshore_dso_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_onshore_dso_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_onshore_dso_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_onshore_dso_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_onshore_dso_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_onshore_elia_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_onshore_elia_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_onshore_elia_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_onshore_elia_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    last_wind_onshore_elia_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_onshore_elia_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    last_wind_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    load_qh:
+        max_lag: 2880
+        min_lag: 25
+    marginal_decremental_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    marginal_incremental_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    negative_imbalance_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    nrv_qh:
+        max_lag: 2880
+        min_lag: 25
+    positive_imbalance_price_qh:
+        max_lag: 2880
+        min_lag: 25
+    residual_load_qh:
+        max_lag: 2880
+        min_lag: 25
+    scheduled_power_amercoeur_gtst_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_angleur_41_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_angleur_42_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_avern_won_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_axpo solutions_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_basf_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_baudou_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_belwind_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_beringen_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_beveren_ineos_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_cfinf_1_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_cfinf_2_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_cfinf_3_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_coo_1_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_coo_2_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_coo_3_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_coo_4_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_coo_5_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_coo_6_ht_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_degussa_gt_2_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_doel_1_nuc_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_doel_2_nuc_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_doel_4_nuc_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_drogenbos_gtst_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_electrabel_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_elia_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_eneco energy trade_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_froidchapelle_won_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_gas_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_gtst_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_herstal_ce_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_hydro_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_inesco_gtst_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_lanaken_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_luminus_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_marcinelle_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_mermaid_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_next kraftwerke_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_nobelwind_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_norther_zeeb_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_northwestern_zeeb_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_northwind_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_nuclear_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_oorderen_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_rentel_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_ringvaart_st_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_rodenhuize_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_rwe_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_scheldelaan_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_seastar_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_sidma_gt_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_slyke_ne_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_slyke_sw_wof_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_st_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_tiha_1n_nuc_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_tiha_1s_nuc_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_tiha_3_nuc_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_total_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_villers_won_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_wind offshore_qh:
+        max_lag: 2880
+        min_lag: -20
+    scheduled_power_wind onshore_qh:
+        max_lag: 2880
+        min_lag: -20
+    si_qh:
+        max_lag: 2880
+        min_lag: 25
+    solar_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_load_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_load_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_solar_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_solar_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_solar_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_solar_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_solar_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_solar_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_to_last_load_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_to_last_solar_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_to_last_wind_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_to_last_wind_offshore_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_to_last_wind_onshore_dso_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_to_last_wind_onshore_elia_forecast_update_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_offshore_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_offshore_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_offshore_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_offshore_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_offshore_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_offshore_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_onshore_dso_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_onshore_dso_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_onshore_dso_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_onshore_dso_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_onshore_dso_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_onshore_dso_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_onshore_elia_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_onshore_elia_forecast_p10_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_onshore_elia_forecast_p90_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_onshore_elia_forecast_qh:
+        max_lag: 2880
+        min_lag: -20
+    wa_wind_onshore_elia_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_onshore_elia_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_p10_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wa_wind_p90_error_qh:
+        max_lag: 2880
+        min_lag: 25
+    wind_offshore_qh:
+        max_lag: 2880
+        min_lag: 25
+    wind_onshore_dso_qh:
+        max_lag: 2880
+        min_lag: 25
+    wind_onshore_elia_qh:
+        max_lag: 2880
+        min_lag: 25
+    wind_qh:
+        max_lag: 2880
+        min_lag: 25
+

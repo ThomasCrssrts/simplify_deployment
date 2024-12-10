@@ -1,0 +1,48 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+display_name: "ga_lag_25"
+description: "ga 100 generations with train period 2023 and test period 2024. Loss: RMSE. Organisms: SI only & MI."
+experiment_name: ga
+command: >-
+  python ./src/simplify_deployment/predict_with_ga.py
+  --path-config=${{inputs.path_config}}
+  --path-to-x-train=${{inputs.path_to_x_train}}
+  --path-to-x-test=${{inputs.path_to_x_test}}
+  --path-to-y-train=${{inputs.path_to_y_train}}
+  --path-to-y-test=${{inputs.path_to_y_test}}
+  --path-best-genome=${{outputs.path_best_genome}}
+  --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+  --extra-organisms=${{inputs.extra_organisms_1}}
+  --extra-organisms=${{inputs.extra_organisms_2}}
+code: ../../..
+environment:
+  azureml:simplify_study_phase:2
+environment_variables: 
+  PYTHONPATH: src
+inputs:
+  path_config:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/src/simplify_deployment/config/config_lag_25_mi_addition.yaml"
+  path_to_x_train:
+    type: uri_file
+    path: azureml:X_train_2023:1
+  path_to_x_test:
+    type: uri_file
+    path: azureml:X_test_2024:1
+  path_to_y_train:
+    type: uri_file
+    path: azureml:target_2023:1
+  path_to_y_test:
+    type: uri_file
+    path: azureml:target_2024:1
+  extra_organisms_1:
+    type: uri_file
+    path: /home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/genome_lag_25_si_only.yaml
+  extra_organisms_2:
+    type: uri_file
+    path: /home/thomas/repos/simplify_deployment/src/simplify_deployment/genomes/genome_lag_25_mi_vars.yaml
+outputs:
+  path_best_genome:
+    type: uri_file
+  path_to_save_predictions:
+    type: uri_file
