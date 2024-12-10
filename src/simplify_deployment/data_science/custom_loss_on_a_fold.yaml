@@ -1,0 +1,31 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+display_name: "Custom loss in torch"
+description: "hello world"
+experiment_name: custom_loss
+command: >-
+  python ./custom_loss_on_a_fold.py
+  --path-to-x-train=${{inputs.path_to_X_train}}
+  --path-to-y-train=${{inputs.path_to_y_train}}
+  --path-to-x-test=${{inputs.path_to_X_test}}
+  --path-to-y-test=${{inputs.path_to_y_test}}
+  --path-to-save-predictions=${{outputs.path_to_save_predictions}}
+code: .
+environment:
+  azureml:simplify_study_phase:2
+inputs:
+  path_to_X_train:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/data_science/50_gen_s1/folds_converted_with_genome/X_train_fold_0.parquet"
+  path_to_y_train:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/data_science/50_gen_s1/folds_converted_with_genome/y_train_fold_0.parquet"
+  path_to_X_test:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/data_science/50_gen_s1/folds_converted_with_genome/X_test_fold_0.parquet"
+  path_to_y_test:
+    type: uri_file
+    path: "/home/thomas/repos/simplify_deployment/data/data_science/50_gen_s1/folds_converted_with_genome/y_test_fold_0.parquet"
+outputs:
+  path_to_save_predictions:
+    type: uri_file
