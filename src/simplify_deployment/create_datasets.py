@@ -69,15 +69,4 @@ def main(
 
 
 if __name__ == "__main__":
-    # main(
-    #     path_minute_data=Path(
-    #         "/home/thomas/repos/simplify_deployment/data/simplify_1_0/s1_minute_data.parquet",
-    #     ),
-    #     path_qh_data=Path(
-    #         "/home/thomas/repos/simplify_deployment/data/simplify_1_0/s1_quarter_data.parquet",
-    #     ),
-    #     path_to_save_folds=Path(
-    #         "/home/thomas/repos/simplify_deployment/data/simplify_1_0/folds"
-    #     ),
-    # )
     typer.run(main)
